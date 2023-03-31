@@ -7,8 +7,8 @@ Api criada com o intuito de reserva de passagens aereas.
 - [x] Padronização das classes.
 - [x] Criação das classes dto.
 - [x] Integração com banco de dados MySQL.
-- [X] Criação dos metodos na controller, Salvar,Editar,Excluir.
-- [] CRUD de das classes e relacionamento teste pelo postman.
+- [x] Criação dos metodos na controller, Salvar,Editar,Excluir.
+- [x] CRUD de das classes e relacionamento, teste pelo postman.
 - [] Testes unitarios.
 - [] Implementar o SpringSecurity.
 - [] Doc da aplicação.
