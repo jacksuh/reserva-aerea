@@ -1,25 +1,20 @@
 package com.booking.flight.dao.aircraft;
-
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+@Getter
+@Setter
+@NoArgsConstructor
 public class AircraftDto {
+
+    private Long id;
 
     private String model;
 
     private int seats;
 
+    private int number;
 
-    public String getModel() {
-        return model;
-    }
+    private String dateflight;
 
-    public void setModel(String model) {
-        this.model = model;
-    }
-
-    public Integer getSeats() {
-        return seats;
-    }
-
-    public void setSeats(int seats) {
-        this.seats = seats;
-    }
 }

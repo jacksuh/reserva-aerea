@@ -1,6 +1,11 @@
 package com.booking.flight.dao.flight;
 import com.booking.flight.model.Aircraft;
-
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+@Setter
+@Getter
+@NoArgsConstructor
 public class FlightDto {
 
     private Integer number;
@@ -9,27 +14,11 @@ public class FlightDto {
 
     private String dateflight;
 
-    public Integer getNumber() {
-        return number;
-    }
+    private int seats;
 
-    public void setNumber(int number) {
-        this.number = number;
-    }
+    private String model;
 
-    public Aircraft getAircraft() {
-        return aircraft;
-    }
 
-    public void setAircraft(Aircraft aircraft) {
-        this.aircraft = aircraft;
-    }
 
-    public String getDateflight() {
-        return dateflight;
-    }
 
-    public void setDateflight(String dateflight) {
-        this.dateflight = dateflight;
-    }
 }
