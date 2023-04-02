@@ -11,7 +11,7 @@ Api criada com o intuito de reserva de passagens aereas.
 - [x] CRUD de das classes e relacionamento, teste pelo postman.
 - [x] Paginação.
 - [x] Cache.
-- [x] Log4j - Implementação de log.
+- [x] Log4j - Implementação de log/Alguns pontos.
 - [x] Doc da aplicação.
 - [x] Cors.
 - [] Testes unitarios.

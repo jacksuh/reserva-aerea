@@ -57,7 +57,7 @@ public class AircraftController {
         log.info("Update: {}", a.getSeats());
         log.info("Update: {}", a.getDateflight());
         log.info("Update: {}", a.getNumber());
-        log.info("Update: {}", a.getPassengers());
+      //  log.info("Update: {}", a.getPassengers());
         return a != null?
                 ResponseEntity.ok(a) : ResponseEntity.notFound().build();
     }

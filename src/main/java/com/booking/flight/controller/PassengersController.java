@@ -16,26 +16,32 @@ import org.springframework.web.util.UriComponentsBuilder;
 @RestController
 @RequestMapping("passenger")
 public class PassengersController {
+
     @Autowired
     private PassengersService service;
+
     @PostMapping
     public ResponseEntity passengerRegistration(@RequestBody @Valid PassengersDto dto, UriComponentsBuilder uriBuilder) {
         Passengers p = service.savePassengers(dto);
         var uri = uriBuilder.path("/passenger/{id}").buildAndExpand(p.getName()).toUri();
         log.info("Entry Name: {}" , dto.getName());
         log.info("Entry CPf: {}", dto.getCpf());
-        log.info("Entry Flight: {}", dto.getFlight());
+        log.info("Entry Aicraft: {}", dto.getAircraft().getId());
         log.info("Return: {}",p.getId());
         log.info("Return: {}",p.getName());
         log.info("Return: {}",p.getCpf());
-        log.info("Return: {}",p.getFlight().getId());
+        System.out.println(dto.getAircraft().getId());
         return ResponseEntity.created(uri).body(new PassengerDetailingDto(p));
     }
+
+
     @GetMapping
     public ResponseEntity<Page<Passengers>> getAllPassangers(@PageableDefault(sort = "id", page = 0, size = 10) Pageable page){
         Page<Passengers> listpassenger = service.getAll(page);
         return ResponseEntity.ok(listpassenger);
     }
+
+
     @PutMapping("/{id}")
     public ResponseEntity updatePassenger(@PathVariable("id") Long id, @RequestBody PassengersDto dto){
 
@@ -44,10 +50,11 @@ public class PassengersController {
         log.info("Update Id: {}", id);
         log.info("Update: {}", p.getName());
         log.info("Update: {}", p.getCpf());
-        log.info("Update: {}", p.getFlight());
+      //  log.info("Update: {}", p.getFlight());
         return p != null?
                 ResponseEntity.ok(p) : ResponseEntity.notFound().build();
     }
+
     @DeleteMapping("/{id}")
     public ResponseEntity deletePassenger(@PathVariable Long id){
         service.deletePassenger(id);

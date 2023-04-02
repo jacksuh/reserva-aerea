@@ -1,5 +1,5 @@
 package com.booking.flight.dao.passengers;
-import com.booking.flight.model.Flight;
+import com.booking.flight.model.Aircraft;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -12,5 +12,5 @@ public class PassengersDto {
 
     private String cpf;
 
-    private Flight flight;
+    private Aircraft aircraft;
 }

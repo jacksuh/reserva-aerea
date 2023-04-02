@@ -1,4 +1,5 @@
 package com.booking.flight.dao.aircraft;
+import com.booking.flight.model.Passengers;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -16,5 +17,6 @@ public class AircraftDto {
     private int number;
 
     private String dateflight;
+
 
 }

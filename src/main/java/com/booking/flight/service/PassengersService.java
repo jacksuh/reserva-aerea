@@ -1,9 +1,11 @@
 package com.booking.flight.service;
 import com.booking.flight.dao.passengers.PassengersDto;
+import com.booking.flight.model.Aircraft;
+import com.booking.flight.repository.AircraftRepository;
 import com.booking.flight.repository.PassengersRepository;
 import com.booking.flight.model.Flight;
 import com.booking.flight.model.Passengers;
-import com.booking.flight.repository.FlightRepository;
+//import com.booking.flight.repository.FlightRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -17,20 +19,23 @@ public class PassengersService {
     @Autowired
     private PassengersRepository repository;
     @Autowired
-    private FlightRepository flightRepository;
+    private AircraftRepository aircraftRepository;
+
     public Page<Passengers> getAll(Pageable page){
         return repository.findAll(page);
     }
     public Passengers savePassengers(PassengersDto dto){
-        Long idFlight = dto.getFlight().getId();
-        Flight flight =
-                flightRepository.findById(idFlight)
-                        .orElseThrow(()-> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Flight not found"));
+        Long idAircraft = dto.getAircraft().getId();
+ 
+
+          Aircraft aircraft =
+                aircraftRepository.findById(idAircraft)
+                        .orElseThrow(()-> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Aicraft not found"));
 
         Passengers passengers1 = new Passengers();
         passengers1.setName(dto.getName());
         passengers1.setCpf(dto.getCpf());
-        passengers1.setFlight(flight);
+        passengers1.setAircraft(aircraft);
 
         return repository.save(passengers1);
     }
@@ -39,7 +44,7 @@ public class PassengersService {
         Passengers db = optional.get();
         db.setName(dto.getName());
         db.setCpf(dto.getCpf());
-        db.setFlight(dto.getFlight());
+        db.setAircraft(dto.getAircraft());
 
         return repository.save(db);
     }

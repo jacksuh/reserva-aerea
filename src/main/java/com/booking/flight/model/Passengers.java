@@ -21,15 +21,14 @@ public class Passengers {
     private String name;
 
     private String cpf;
-
     @JsonIgnore
-    @ManyToOne@JoinColumn(name="flight_id", referencedColumnName="id",nullable=false)
-    private Flight flight;
+    @ManyToOne@JoinColumn(name="aircraft_id", referencedColumnName="id",nullable=false)
+    private Aircraft aircraft;
 
     public Passengers(PassengersDto dto){
         this.setName(dto.getName());
         this.setCpf(dto.getCpf());
-        this.setFlight(dto.getFlight());
+        this.setAircraft(dto.getAircraft());
     }
 }
 
