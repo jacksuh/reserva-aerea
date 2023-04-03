@@ -14,9 +14,7 @@ Api criada com o intuito de reserva de passagens aereas.
 - [x] Log4j - Implementação de log/Alguns pontos.
 - [x] Doc da aplicação.
 - [x] Cors.
-- [] Testes unitarios.
-- [] Implementar o SpringSecurity.
-- [] Subir aplicação em algum lugar(Cloud, etc).
+
 
 ## 🛠 Tecnologias
 

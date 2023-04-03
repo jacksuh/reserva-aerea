@@ -1,5 +1,4 @@
 package com.booking.flight.dao.aircraft;
-import com.booking.flight.model.Passengers;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
